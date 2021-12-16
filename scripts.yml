@@ -1,0 +1,13 @@
+scripts:
+  setup:
+    - deno cache web/deps.ts
+  dev:
+    - deno run --allow-net --allow-read https://deno.land/std@0.106.0/http/file_server.ts --port 7788 web
+  test:
+    - deno test web/_test.ts
+  deploy:
+    # It does not include mifification.
+    - deno bundle --config deno.tsconfig.json web/main.tsx web/main_bundle.js
+    # require `npm i -g netlify-cli`
+    - npx netlify deploy -d web --prod
+

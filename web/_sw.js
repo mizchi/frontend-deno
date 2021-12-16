@@ -1,4 +1,4 @@
-import { transformSync } from "http://esm.sh/@mizchi/mints";
+import { transformSync } from "http://esm.sh/@mizchi/mints@0.1.4";
 addEventListener("install", (ev) => ev.waitUntil(skipWaiting()));
 addEventListener("activate", (ev) => ev.waitUntil(clients.claim()));
 addEventListener(
